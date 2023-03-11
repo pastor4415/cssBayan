@@ -5,7 +5,8 @@ body {
     background-attachment: fixed;   
     font-family:Arial, Helvetica, sans-serif
  }
- .container { /*общий блок мемов*/
+
+.container { /*общий блок мемов*/
     margin: 20px auto;  
     padding: 0;
     padding-bottom: 10px;
@@ -13,21 +14,25 @@ body {
     width: 60%;
     min-width: 400px;
     min-height: 590px;
- }
-
- .container label { /* блок мема */
-    display: block;
-    border: 2px solid black;
- }
- input {
-    display: none;
- }
- input:not(:checked)+label img { /*картинка мема*/
-    display: none;
- }
-input:checked+label {
-    background-color: aqua;
 }
- .container label:hover img { /*наведение на мем*/
+.img_mem {
+   margin: auto;
+}
+input {
+   display: none;
+}
+
+.container label { /* блок мема */
     display: block;
- }
+    border-top: 2px solid black;
+}
+
+input:not(:checked)+label img { /*картинка мема*/
+    display: none;
+}
+input:checked+label {
+    background-color: aquamarine;
+}
+.container label:hover img { /*наведение на мем*/
+    display: block;
+}
