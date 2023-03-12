@@ -30,7 +30,7 @@ label:hover { /* смена курсора */
 .mem_title:hover { /* смена курсора - ряд гармошки */
     cursor: grabbing;
 }
-.container label { /* блок мема */
+label { /* блок мема */
     display: block;
     border-top: 2px solid gray;
     padding: 2%;
@@ -40,6 +40,7 @@ label:hover { /* смена курсора */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1%;
 }
 
 p { /*название мема */
@@ -47,25 +48,37 @@ p { /*название мема */
     font-weight: bolder;
 }
 
-.img_mem { /* картинка мема */
-    display:none;
-    margin: auto;
-    width: 60%;
-    padding-top: 2%;
+.jacket_for_img {
+    margin: 0 auto;
+    width: 0;
 }
 
-input:checked + label .img_mem { /*вкл картинки мема*/
+label:hover .jacket_for_img {
     display: block;
+    width: 100%;
 }
 
-input:checked + label .mem_title_icon {
+.img_mem { /* картинка мема */
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    transition: width 1s;
+   
+}
+
+input:checked + label .jacket_for_img { /*вкл картинки мема*/
+    width: 100%;
+}
+input:checked + label .img_mem{ /* ширина для выранного мема */
+    width: 80%;
+}
+input:checked + label .mem_title_icon { /* иконка под углом для выбранного */ 
     transform: rotate(45deg); 
 }
 
-.container label:hover .img_mem { /*вкл картинку при наведение на мем*/
-    display: block;
-    transition: 0.5s;
-    transform: scale(0.5);
+label:hover .img_mem { /*вкл картинку при наведение на мем*/
+   width: 80%;
+    
 }
 
 label:hover .mem_title_icon { /*поворот иконки при наведении */
@@ -73,3 +86,10 @@ label:hover .mem_title_icon { /*поворот иконки при наведе�
     transform: rotate(45deg); 
 }
 
+label:active {
+    opacity: 0.5;
+}
+
+label:active p {
+    color:blue;
+}
